@@ -1,20 +1,106 @@
-Blog Application - Local SetupThis document provides instructions on how to set up and run the blog application locally.PrerequisitesNode.js (LTS version recommended)npm or Yarn package managerMongoDB Atlas account (Free Tier is sufficient for local development)Git1. Backend SetupClone the Backend Repository:git clone https://github.com/AshishKushaj/blog_backend
+# 📝 Blog Application - Local Setup
+
+This guide walks you through setting up and running the **Blog Application** locally for development purposes.
+
+---
+
+## 🔧 Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (LTS version recommended)
+- npm or [Yarn](https://yarnpkg.com/)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) (Free Tier is sufficient)
+- [Git](https://git-scm.com/)
+
+---
+
+## 📦 1. Backend Setup
+
+### 🔁 Clone the Backend Repository
+
+```bash
+git clone https://github.com/AshishKushaj/blog_backend
 cd blog_backend
-Install Dependencies:npm install
+```
+
+### 📥 Install Dependencies
+
+```bash
+npm install
 # or
 yarn install
-Create a .env file:In the root of your backend directory (blog_backend), create a file named .env.Add the following environment variables, replacing the placeholder values:MONGO_URI="your_mongodb_atlas_connection_string"
+```
+
+### 🔐 Create a `.env` File
+
+In the `blog_backend` root directory, create a `.env` file with the following contents:
+
+```env
+MONGO_URI="your_mongodb_atlas_connection_string"
 JWT_SECRET="your_jwt_secret_key"
-Replace "your_mongodb_atlas_connection_string" with the connection string from your MongoDB Atlas cluster. Remember to replace <username>, <password>, and <dbname> in the string.Replace "your_jwt_secret_key" with a strong, random string for JWT signing.Important: Ensure .env is added to your backend's .gitignore file.Start the Backend Server:npm run server
+```
+
+- Replace `your_mongodb_atlas_connection_string` with your actual MongoDB Atlas URI.
+- Replace `your_jwt_secret_key` with a strong, random string.
+- **Important:** Ensure `.env` is added to `.gitignore`.
+
+### ▶️ Start the Backend Server
+
+```bash
+npm run server
 # or
 yarn server
-The backend server should start and connect to your MongoDB Atlas database. It will typically run on port 3000 (or the port defined in your server.js).2. Frontend SetupClone the Frontend Repository:git clone https://github.com/AshishKushaj/blog_frontend
+```
+
+> The backend should run on **http://localhost:3000** (unless otherwise specified).
+
+---
+
+## 🎨 2. Frontend Setup
+
+### 🔁 Clone the Frontend Repository
+
+```bash
+git clone https://github.com/AshishKushaj/blog_frontend
 cd blog_frontend
-Install Dependencies:npm install
+```
+
+### 📥 Install Dependencies
+
+```bash
+npm install
 # or
 yarn install
-Create a .env file:In the root of your frontend directory (blog_frontend), create a file named .env.Add the following environment variable, pointing to your local backend URL:VITE_BACKEND_URL=http://localhost:3000
-Ensure the port matches the one your backend is running on locally.Important: Ensure .env is added to your frontend's .gitignore file.Start the Frontend Development Server:npm run dev
+```
+
+### 🔐 Create a `.env` File
+
+In the `blog_frontend` root directory, create a `.env` file with the following content:
+
+```env
+VITE_BACKEND_URL=http://localhost:3000
+```
+
+- Make sure this matches your backend's running port.
+- **Important:** Ensure `.env` is added to `.gitignore`.
+
+### ▶️ Start the Frontend Server
+
+```bash
+npm run dev
 # or
 yarn dev
-The frontend development server should start, typically on port 5173 (or another available port).Running the ApplicationEnsure both your backend (npm run server or yarn server) and frontend (npm run dev or yarn dev) servers are running in separate terminals.Open your web browser and navigate to the frontend development server's address (e.g., http://localhost:5173).You should now be able to use the application locally.
+```
+
+> The frontend will typically run on **http://localhost:5173**.
+
+---
+
+## 🚀 Running the Application
+
+1. Start both **backend** and **frontend** servers in separate terminal windows.
+2. Open your browser and go to: [http://localhost:5173](http://localhost:5173)
+3. You should now see the blog application running locally!
+
+---
